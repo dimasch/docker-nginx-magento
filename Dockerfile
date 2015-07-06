@@ -2,34 +2,20 @@ FROM ubuntu:latest
 MAINTAINER Komplizierte Technologien <a.putin@kmplzt.de>
 
 # Keep upstart from complaining
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -sf /bin/true /sbin/initctl
+RUN dpkg-divert --local --rename --add /sbin/initctl && \
+ln -sf /bin/true /sbin/initctl
 
 # Let the conatiner know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-RUN apt-get -y upgrade
-
-# Basic Requirements
-RUN apt-get -y install nginx php5-fpm php5-mysql php-apc pwgen python-setuptools curl git ssmtp pv mysql-client vim tree
- 
-# Magento Requirements
-RUN apt-get -y install php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xdebug
-
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer.phar
-
-# Install n98-magerun
-RUN curl -o n98-magerun.phar https://raw.githubusercontent.com/netz98/n98-magerun/master/n98-magerun.phar
-RUN chmod +x ./n98-magerun.phar
-RUN mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
-
-# Install Modman
-# RUN bash < <(curl -s -L https://raw.github.com/colinmollenhour/modman/master/modman-installer) 
-# RUN chmod +x modman
-# RUN mv modman /usr/local/bin/
+RUN apt-get update && apt-get -y upgrade && \
+apt-get -y install nginx php5-fpm php5-mysql php-apc python-setuptools mysql-client curl ssmtp pv \
+php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xdebug && \
+curl -sS https://getcomposer.org/installer | php && \
+mv composer.phar /usr/local/bin/composer.phar && \
+curl -o n98-magerun.phar https://raw.githubusercontent.com/netz98/n98-magerun/master/n98-magerun.phar && \
+chmod +x ./n98-magerun.phar && \
+mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
 
 # Magento Initialization and Startup Script
 ADD /scripts /scripts
