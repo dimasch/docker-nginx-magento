@@ -5,9 +5,7 @@ web:
  links:
   - mysql:db
  volumes:
-  - .:/var/www/magento
- env_file:
-  - env
+  - .:/var/www/magento 
 mysql:
  image: mysql
  env_file:

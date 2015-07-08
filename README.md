@@ -3,48 +3,45 @@ Docker NGINX + Magento container
  
 ## About
 
-This container is optimized for running Magento using NGINX
-
-This container requires a seperate dedicated mysql container (mysql) to run.
-You can find mysql either at docker (https://registry.hub.docker.com/_/mysql/)
+This container is optimized for running Magento using NGINX and PHP-FPM
 
 ## Usage by example
 
+### A productive development environment with Docker on OS X
 
-### For Mac OS users - Boot2docker Vagrant Box
-
-Boot2docker Vagrant box for optimized Docker and Docker Compose use on Mac and Windows.
-https://github.com/blinkreaction/boot2docker-vagrant
-
-Install on Mac OS:
-
-```shell
-curl https://raw.githubusercontent.com/blinkreaction/boot2docker-vagrant/master/setup.sh | bash
+```sh
+https://github.com/brikis98/docker-osx-dev
 ```
 
-### The mysql container
+### Install
 
-```shell
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=123 -d mysql
+```sh
+docker-osx-dev
+docker-compose up
 ```
 
-### The magento container
+### Example Yml file:
 
-```shell
-docker run -d --name project -p 80:80 -v /.ssh/:/root/.ssh -v project:/var/www/magento -v modules:/var/www/modules --link mysql:db komplizierte/docker-nginx-magento
+```yml
+web:
+ image: komplizierte/docker-nginx-magento
+ ports:
+  - "80:80"
+ links:
+  - mysql:db
+ volumes:
+  - .:/var/www/magento 
+mysql:
+ image: mysql
+ env_file:
+  - env    
 ```
 
-#### XDebug:
+#### XDebug start/stop:
 
 ```shell
 ./scripts/xdebug-start.sh
 ./scripts/xdebug-stop.sh
-```
-
-#### Resolve permissions in container
-
-```shell
-chown -R nobody:nogroup project/
 ```
 
 ## Comments
