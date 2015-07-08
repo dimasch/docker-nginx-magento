@@ -3,7 +3,9 @@ web:
  ports:
   - "80:80"
  links:
-  - mysql
+  - mysql:db
+ volumes:
+  - .:/var/www
  env_file:
   - env
 mysql:
