@@ -13,11 +13,17 @@ This container is optimized for running Magento using NGINX and PHP-FPM
 https://github.com/brikis98/docker-osx-dev
 ```
 
-### Install
+### Install on Ubuntu
+
+```sh
+docker-compose up -d
+```
+
+### Install on OS X
 
 ```sh
 docker-osx-dev
-docker-compose up
+docker-compose up -d
 ```
 
 ### Example Yml file:
