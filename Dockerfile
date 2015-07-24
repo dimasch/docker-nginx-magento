@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Komplizierte Technologien <a.putin@kmplzt.de>
+MAINTAINER Komplizierte Technologien <support@kt-team.de>
 
 # Keep upstart from complaining
 RUN dpkg-divert --local --rename --add /sbin/initctl && \
