@@ -5,8 +5,8 @@ web:
  links:
   - mysql:db
  volumes:
-  - .:/var/www/magento 
+  - .:/var/www/magento
 mysql:
  image: mysql
- env_file:
-  - env
+ environment:
+  - MYSQL_ROOT_PASSWORD=123
