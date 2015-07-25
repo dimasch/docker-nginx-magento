@@ -30,7 +30,8 @@ docker-compose up -d
 
 ```sh
 127.0.0.1    localhost
-192.168.59.103    kmplzt.dev
+192.168.59.103	  dockerhost
+192.168.59.103	  kmplzt.dev
 ```
 
 ### On a Linux box, it will look like this:

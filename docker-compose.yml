@@ -11,4 +11,4 @@ web:
  volumes:
   - .:/var/www/magento
  environment:
-  BASE_URL: http://kmplzt.dev
+  BASE_URL: http://kmplzt.dev/

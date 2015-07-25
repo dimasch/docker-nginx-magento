@@ -6,7 +6,7 @@ echo >&2 "Initializing ssmtp"
 export DEFAULT_MAILSERVER='mailserver'
 
 if [[ "x"$MAILSERVER != "x" ]]; then
-	export DEFAULT_MAILSERVER=$MAILSERVER	
+	export DEFAULT_MAILSERVER=$MAILSERVER
 fi
 
 echo "root=noReply@${DEFAULT_MAILSERVER}" > /etc/ssmtp/ssmtp.conf
