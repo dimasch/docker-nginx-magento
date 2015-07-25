@@ -26,23 +26,6 @@ docker-osx-dev
 docker-compose up -d
 ```
 
-### Example Yml file:
-
-```yml
-web:
- image: komplizierte/docker-nginx-magento
- ports:
-  - "80:80"
- links:
-  - mysql:db
- volumes:
-  - .:/var/www/magento 
-mysql:
- image: mysql
- env_file:
-  - env    
-```
-
 #### XDebug start/stop:
 
 ```shell

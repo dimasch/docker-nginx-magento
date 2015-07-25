@@ -1,3 +1,7 @@
+mysql:
+ image: mysql
+ environment:
+  MYSQL_ROOT_PASSWORD: tmp
 web:
  image: komplizierte/docker-nginx-magento
  ports:
@@ -6,7 +10,5 @@ web:
   - mysql:db
  volumes:
   - .:/var/www/magento
-mysql:
- image: mysql
  environment:
-  MYSQL_ROOT_PASSWORD: tmp
+  BASE_URL: http://kmplzt.dev
