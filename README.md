@@ -1,6 +1,6 @@
 #docker-nginx-magento
 Docker NGINX + Magento container
- 
+
 ## About
 
 This container is optimized for running Magento using NGINX and PHP-FPM
@@ -24,6 +24,19 @@ docker-compose up -d
 ```sh
 docker-osx-dev
 docker-compose up -d
+```
+
+### My /etc/hosts on my Mac looks like:
+
+```sh
+127.0.0.1    localhost
+192.168.59.103    kmplzt.dev
+```
+
+### On a Linux box, it will look like this:
+
+```sh
+127.0.0.1    localhost kmplzt.dev
 ```
 
 #### XDebug start/stop:
