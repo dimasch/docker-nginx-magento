@@ -30,7 +30,10 @@ php5enmod mcrypt && \
 rm -f /etc/service/sshd/down && \
 mkdir -p /tmp/sessions/ && \
 chown www-data.www-data /tmp/sessions -Rf && \
-sed -i -e "s:;\s*session.save_path\s*=\s*\"N;/path\":session.save_path = /tmp/sessions:g" /etc/php5/fpm/php.ini
+sed -i -e "s:;\s*session.save_path\s*=\s*\"N;/path\":session.save_path = /tmp/sessions:g" /etc/php5/fpm/php.ini && \
+/usr/bin/easy_install supervisor && /usr/bin/easy_install supervisor-stdout
+
+ADD /config/supervisor/supervisord.conf /etc/supervisord.conf
 
 VOLUME /var/www
 EXPOSE 80
