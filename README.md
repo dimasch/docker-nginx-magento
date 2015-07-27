@@ -7,12 +7,6 @@ This container is optimized for running Magento using NGINX and PHP-FPM
 
 ## Usage by example
 
-### A productive development environment with Docker on OS X
-
-```sh
-https://github.com/brikis98/docker-osx-dev
-```
-
 ### Install on Ubuntu
 
 ```sh
@@ -25,6 +19,23 @@ docker-compose up -d
 docker-osx-dev
 docker-compose up -d
 ```
+For more information about productive development environment with Docker on OS X:
+https://github.com/brikis98/docker-osx-dev
+
+### Import database
+
+Put "dump.sql.gz" to project root folder and execute script:
+
+```sh
+docker exec -it kmplzt_web_1 /scripts/import.sh
+```
+
+Where kmplzt_web_1 the project cotainer name, for show list of containers in current directory use:
+
+```sh
+docker-compose ps
+```
+
 
 ### My /etc/hosts on my Mac looks like:
 
