@@ -26,6 +26,7 @@ cp /config/nginx/apc.ini /etc/php5/mods-available/apcu.ini && \
 cp /config/nginx/php.ini /etc/php5/fpm/php.ini && \
 cp /config/nginx/php-fpm.conf /etc/php5/fpm/php-fpm.conf && \
 cp /config/nginx/www.conf /etc/php5/fpm/pool.d/www.conf && \
+cp /config/mysql/.my.cnf /root/.my.cnf && \
 php5enmod mcrypt && \
 rm -f /etc/service/sshd/down && \
 mkdir -p /tmp/sessions/ && \
