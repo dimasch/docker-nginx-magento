@@ -25,6 +25,8 @@ echo "FromLineOverride=YES" >> /etc/ssmtp/ssmtp.conf
 
 sed -i -e"s:;sendmail_path =:sendmail_path = ssmtp -t:g" /etc/php5/fpm/php.ini
 
+echo "export TERM=xterm" >> /root/.bashrc
+
 mkdir -p /var/www/magento
 mkdir -p /var/www/logs
 #chown www-data.www-data /var/www/ -Rf
