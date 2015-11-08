@@ -1,5 +1,5 @@
 web:
- image: komplizierte/docker-nginx-magento
+ image: komplizierte/docker-nginx-magento:master
  ports:
   - "80:80"
  extra_hosts:
