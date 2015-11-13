@@ -1,6 +1,6 @@
 web:
- image: komplizierte/docker-nginx-magento:master
- # dns: 127.0.0.1
+ image: komplizierte/docker-nginx-magento:latest
+ dns: 8.8.8.8
  ports:
   - "80:80"
  extra_hosts:
