@@ -9,4 +9,3 @@ web:
   - .:/var/www/magento
  environment:
   BASE_URL: http://kt-team.dev/
-  DATABASE_NAME: kmplzt
