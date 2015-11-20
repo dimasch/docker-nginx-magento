@@ -17,11 +17,11 @@ docker-compose up -d
 ### Install on OS X
 
 ```sh
-docker-osx-dev
+docker-machine-nfs
 docker-compose up -d
 ```
-For more information about productive development environment with Docker on OS X:
-https://github.com/brikis98/docker-osx-dev
+Activates NFS on docker-machine virtualbox:
+https://github.com/adlogix/docker-machine-nfs
 
 ### Import database
 
@@ -42,8 +42,7 @@ docker-compose ps
 
 ```sh
 127.0.0.1    localhost
-192.168.59.103	  dockerhost
-192.168.59.103	  kmplzt.dev
+192.168.59.103	  dockerhost mysql kmplzt.dev
 ```
 
 ### On a Linux box, it will look like this:
