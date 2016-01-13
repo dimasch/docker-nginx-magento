@@ -64,6 +64,7 @@ RUN 	cd /usr/src &&\
 	cd /usr/src/nginx-${NGINX_VERSION}/ && sudo make install &&\
         sed -i 's|/usr/sbin/nginx|/home/nginx|g' /etc/init.d/nginx && \
         rm /usr/sbin/nginx &&\
+	rm -fr /usr/src/* &&\
         mkdir -p /var/nginx/pagespeed_cache
 
 
