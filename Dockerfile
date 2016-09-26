@@ -17,10 +17,7 @@ mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
 
 # Install NodeJS, RequireJS, UglifyJS
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
-apt-get install -y nodejs && \
-npm install -g requirejs && \
-npm install -g uglify-js
-
+apt-get install -y nodejs
 
 # Nginx with pagespeed
 # Use source.list with all repositories and Yandex mirrors.
