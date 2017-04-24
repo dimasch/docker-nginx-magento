@@ -6,6 +6,6 @@ web:
  extra_hosts:
   - "mysql:192.168.99.100"
  volumes:
-  - .:/var/www/magento
+  - ./html:/var/www/magento
  environment:
   BASE_URL: http://m.local/
