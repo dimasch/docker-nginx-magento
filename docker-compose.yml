@@ -8,4 +8,4 @@ web:
  volumes:
   - .:/var/www/magento
  environment:
-  BASE_URL: http://kt-team.dev/
+  BASE_URL: http://m.local/
