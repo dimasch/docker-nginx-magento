@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 apt-get -y install php5-fpm php5-mysql php-apc python-setuptools mysql-client curl ssmtp pv nano vim mc \
 php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xdebug && \
-curl -o n98-magerun.phar https://raw.githubusercontent.com/netz98/n98-magerun/master/n98-magerun.phar && \
+curl -O https://files.magerun.net/n98-magerun.phar && \
 chmod +x ./n98-magerun.phar && \
 mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
 
