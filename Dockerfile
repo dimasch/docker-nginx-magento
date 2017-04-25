@@ -94,5 +94,7 @@ ADD /config/supervisor/supervisord.conf /etc/supervisord.conf
 VOLUME /var/www
 EXPOSE 80
 
+WORKDIR /var/www/magento
+
 ENTRYPOINT ["/scripts/entrypoint.sh"]
 CMD ["/bin/bash", "/scripts/start.sh"]
